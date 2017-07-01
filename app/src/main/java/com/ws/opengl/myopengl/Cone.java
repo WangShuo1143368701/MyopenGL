@@ -105,7 +105,7 @@ public class Cone implements GLSurfaceView.Renderer {
         mPositionHandle=GLES20.glGetAttribLocation(mProgram,"vPosition");
         mColorHandle=GLES20.glGetUniformLocation(mProgram,"vColor");
 
-        oval.onSurfaceCreated(gl,config);
+         oval.onSurfaceCreated(gl,config);
     }
 
     @Override
