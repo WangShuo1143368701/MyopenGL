@@ -50,14 +50,13 @@ public class GLRenderer implements  GLSurfaceView.Renderer {
 
     @Override
     public void onSurfaceCreated(GL10 gl10, EGLConfig eglConfig) {
-        GLES20.glClearColor(0.0f, 0.0f, 0.0f, 0.0f);//清屏
+        GLES20.glClearColor(1.0f, 1.0f, 1.0f, 0.0f);//清屏
 
         String vertexShader = ShaderUtils.readRawTextFile(context, R.raw.simple_vertex_shader);
         String fragmentShader= ShaderUtils.readRawTextFile(context, R.raw.simple_fragment_shader);
         programId=ShaderUtils.createProgram(vertexShader,fragmentShader);
         aPositionLocation= GLES20.glGetAttribLocation(programId,A_POSITION);
         uMatrixLocation= GLES20.glGetUniformLocation(programId,U_Matrix);
-
 
     }
 

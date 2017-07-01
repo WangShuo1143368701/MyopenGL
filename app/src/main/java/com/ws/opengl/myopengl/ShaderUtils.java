@@ -37,7 +37,7 @@ public class ShaderUtils {
 
         int program = GLES20.glCreateProgram();
         if (program != 0) {
-            GLES20.glAttachShader(program, vertexShader);
+            GLES20.glAttachShader(program, vertexShader); //将顶点着色器加入到程序
             checkGlError("glAttachShader");
             GLES20.glAttachShader(program, pixelShader);
             checkGlError("glAttachShader");
@@ -56,7 +56,7 @@ public class ShaderUtils {
 
 
     public static int loadShader(int shaderType, String source) {
-        int shader = GLES20.glCreateShader(shaderType);
+        int shader = GLES20.glCreateShader(shaderType); //创建一个空的OpenGLES程序
         if (shader != 0) {
             GLES20.glShaderSource(shader, source);
             GLES20.glCompileShader(shader);
@@ -71,6 +71,7 @@ public class ShaderUtils {
         }
         return shader;
     }
+
 
     public static String readRawTextFile(Context context, int resId) {
         InputStream inputStream = context.getResources().openRawResource(resId);
