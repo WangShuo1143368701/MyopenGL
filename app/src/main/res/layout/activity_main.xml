@@ -66,6 +66,13 @@
             android:textSize="16dp"
             android:layout_margin="5dp"
             android:text="带光源的球"/>
+        <Button
+            android:id="@+id/MatrixVary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:layout_margin="5dp"
+            android:text="矩阵变换"/>
 
     </LinearLayout>
 </FrameLayout>

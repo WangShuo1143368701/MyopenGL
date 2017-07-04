@@ -15,7 +15,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ShapeActivity"></activity>
+        <activity android:name=".ShapeActivity" />
+        <activity android:name=".MatrixVary.MatrixVaryActivity"></activity>
     </application>
 
 </manifest>

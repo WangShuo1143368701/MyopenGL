@@ -11,6 +11,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.ws.opengl.myopengl.MatrixVary.MatrixVaryActivity;
+
 /**
  * 搭建最基本的 OpenGL Android 程序
  */
@@ -18,7 +20,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private GLSurfaceView glSurfaceView;
     private boolean rendererSet = false;
 
-    private Button SquareBtn,OvalBtn,CubeBtn,CylinderBtn,ConeBtn,BallBtn,BallWithLightBtn;
+    private Button SquareBtn,OvalBtn,CubeBtn,CylinderBtn,ConeBtn,BallBtn,BallWithLightBtn,MatrixVary;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +40,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ConeBtn = (Button) findViewById(R.id.Cone);
         BallBtn = (Button) findViewById(R.id.Ball);
         BallWithLightBtn = (Button) findViewById(R.id.BallWithLight);
+        MatrixVary = (Button) findViewById(R.id.MatrixVary);
 
         SquareBtn.setOnClickListener(this);
         OvalBtn.setOnClickListener(this);
@@ -46,6 +49,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ConeBtn.setOnClickListener(this);
         BallBtn.setOnClickListener(this);
         BallWithLightBtn.setOnClickListener(this);
+        MatrixVary.setOnClickListener(this);
     }
     private void initdata(GLSurfaceView.Renderer renderer) {
         final ActivityManager activityManager =
@@ -104,6 +108,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case  R.id.BallWithLight://带光源的球
                 StartActivity("BallWithLight");
+                break;
+            case  R.id.MatrixVary:
+                Intent intent2=new Intent(MainActivity.this, MatrixVaryActivity.class);
+                startActivity(intent2);
                 break;
             default:
                 break;
