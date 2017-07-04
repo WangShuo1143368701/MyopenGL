@@ -1,6 +1,7 @@
 package com.ws.gl.opengltexture.util;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.opengl.GLES20;
 import android.util.Log;
 
@@ -90,6 +91,22 @@ public class ShaderUtils {
             e.printStackTrace();
         }
         return null;
+    }
+
+    //通过路径加载Assets中的文本内容
+    public static String loadFromAssetsFile(Resources mRes, String path){
+        StringBuilder result=new StringBuilder();
+        try{
+            InputStream is=mRes.getAssets().open(path);
+            int ch;
+            byte[] buffer=new byte[1024];
+            while (-1!=(ch=is.read(buffer))){
+                result.append(new String(buffer,0,ch));
+            }
+        }catch (Exception e){
+            return null;
+        }
+        return result.toString().replaceAll("\\r\\n","\n");
     }
 }
 
