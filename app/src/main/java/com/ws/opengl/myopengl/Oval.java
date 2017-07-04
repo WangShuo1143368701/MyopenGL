@@ -8,7 +8,6 @@ package com.ws.opengl.myopengl;
 
 import android.content.Context;
 import android.opengl.GLES20;
-import android.opengl.GLSurfaceView;
 import android.opengl.Matrix;
 
 import java.nio.ByteBuffer;
@@ -20,7 +19,7 @@ import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
 
-public class Oval implements GLSurfaceView.Renderer {
+public class Oval  extends Shape {
 
     private FloatBuffer vertexBuffer;
     private final String vertexShaderCode =

@@ -10,6 +10,8 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/openglpicture" />
+            <option value="$PROJECT_DIR$/opengltexture" />
             <option value="$PROJECT_DIR$/openglvideoplayer" />
           </set>
         </option>

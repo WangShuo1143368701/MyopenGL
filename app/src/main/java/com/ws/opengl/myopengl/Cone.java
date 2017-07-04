@@ -8,7 +8,6 @@ package com.ws.opengl.myopengl;
 
 import android.content.Context;
 import android.opengl.GLES20;
-import android.opengl.GLSurfaceView;
 import android.opengl.Matrix;
 
 import java.nio.ByteBuffer;
@@ -22,7 +21,7 @@ import javax.microedition.khronos.opengles.GL10;
 /**
  * Description:圆锥
  */
-public class Cone implements GLSurfaceView.Renderer {
+public class Cone  extends Shape {
 
     private int mProgram;
 

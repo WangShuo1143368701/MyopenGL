@@ -1,1 +1,1 @@
-include ':app', ':openglvideoplayer'
+include ':app', ':openglvideoplayer', ':opengltexture', ':openglpicture'
