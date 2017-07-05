@@ -26,5 +26,12 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:text="离屏渲染"/>
+
+        <Button
+            android:id="@+id/egl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="egl后台"/>
     </LinearLayout>
 </FrameLayout>

@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
+import com.ws.gl.opengltexture.wsegl.EGLBackEnvActivity;
 import com.ws.gl.opengltexture.wsetc.ZipActivity;
 import com.ws.gl.opengltexture.wsfbo.FBOActivity;
 
@@ -16,7 +17,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private GLSurfaceView glSurfaceView;
 
-    private Button etcBtn,fboBtn;
+    private Button etcBtn,fboBtn,eglBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +39,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         fboBtn= (Button) findViewById(R.id.fbo);
         fboBtn.setOnClickListener(this);
+
+        eglBtn= (Button) findViewById(R.id.egl);
+        eglBtn.setOnClickListener(this);
     }
 
     @Override
@@ -67,6 +71,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.fbo:
                 Intent intent2 = new Intent(MainActivity.this, FBOActivity.class);
                 startActivity(intent2);
+                break;
+            case R.id.egl:
+                Intent intent3 = new Intent(MainActivity.this, EGLBackEnvActivity.class);
+                startActivity(intent3);
                 break;
         }
     }

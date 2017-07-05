@@ -15,6 +15,8 @@
 
         <activity android:name=".wsetc.ZipActivity"/>
         <activity android:name=".wsfbo.FBOActivity"/>
+        <activity android:name=".wsegl.EGLBackEnvActivity"/>
+
     </application>
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CAMERA" />
