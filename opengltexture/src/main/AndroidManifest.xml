@@ -16,6 +16,9 @@
         <activity android:name=".wsetc.ZipActivity"/>
         <activity android:name=".wsfbo.FBOActivity"/>
         <activity android:name=".wsegl.EGLBackEnvActivity"/>
+        <activity android:name=".wsobj.ObjLoadActivity"/>
+        <activity android:name=".wsobj.ObjLoadActivity2"/>
+        <activity android:name=".wsVR.VrContextActivity"/>
 
     </application>
     <uses-permission android:name="android.permission.INTERNET" />

@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools" android:id="@+id/activity_main"
     android:layout_width="match_parent" android:layout_height="match_parent"
     >
-
     <android.opengl.GLSurfaceView
         android:id="@+id/glSurfaceView"
         android:layout_width="match_parent"
@@ -33,5 +32,25 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:text="egl后台"/>
+        <Button
+            android:id="@+id/obj"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="3D OBJ模型·"/>
+        <Button
+            android:id="@+id/obj_MTL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="OBJ+MTL模型"/>
+        <Button
+            android:id="@+id/vr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="VR"/>
     </LinearLayout>
+
+
 </FrameLayout>

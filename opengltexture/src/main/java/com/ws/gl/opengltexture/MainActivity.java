@@ -8,16 +8,19 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
+import com.ws.gl.opengltexture.wsVR.VrContextActivity;
 import com.ws.gl.opengltexture.wsegl.EGLBackEnvActivity;
 import com.ws.gl.opengltexture.wsetc.ZipActivity;
 import com.ws.gl.opengltexture.wsfbo.FBOActivity;
+import com.ws.gl.opengltexture.wsobj.ObjLoadActivity;
+import com.ws.gl.opengltexture.wsobj.ObjLoadActivity2;
 
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private GLSurfaceView glSurfaceView;
 
-    private Button etcBtn,fboBtn,eglBtn;
+    private Button etcBtn,fboBtn,eglBtn,objBtn,obj_mtlBtn,VRBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +45,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         eglBtn= (Button) findViewById(R.id.egl);
         eglBtn.setOnClickListener(this);
+
+        objBtn= (Button) findViewById(R.id.obj);
+        objBtn.setOnClickListener(this);
+
+        obj_mtlBtn= (Button) findViewById(R.id.obj_MTL);
+        obj_mtlBtn.setOnClickListener(this);
+
+        VRBtn= (Button) findViewById(R.id.vr);
+        VRBtn.setOnClickListener(this);
     }
 
     @Override
@@ -75,6 +87,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.egl:
                 Intent intent3 = new Intent(MainActivity.this, EGLBackEnvActivity.class);
                 startActivity(intent3);
+                break;
+            case R.id.obj:
+                Intent intent4 = new Intent(MainActivity.this, ObjLoadActivity.class);
+                startActivity(intent4);
+                break;
+            case R.id.obj_MTL:
+                Intent intent5 = new Intent(MainActivity.this, ObjLoadActivity2.class);
+                startActivity(intent5);
+                break;
+            case R.id.vr:
+                Intent intent6 = new Intent(MainActivity.this, VrContextActivity.class);
+                startActivity(intent6);
                 break;
         }
     }

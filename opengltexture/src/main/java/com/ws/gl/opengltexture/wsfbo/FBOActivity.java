@@ -74,7 +74,7 @@ public class FBOActivity extends AppCompatActivity implements FBORender.Callback
             c.moveToFirst();
             int columnIndex = c.getColumnIndex(filePathColumns[0]);
             mImgPath = c.getString(columnIndex);
-            Log.e("wuwang","img->"+mImgPath);
+            Log.e("wangshuo","img->"+mImgPath);
             Bitmap bmp=BitmapFactory.decodeFile(mImgPath);
             mBmpWidth=bmp.getWidth();
             mBmpHeight=bmp.getHeight();
@@ -89,7 +89,7 @@ public class FBOActivity extends AppCompatActivity implements FBORender.Callback
         new Thread(new Runnable() {
             @Override
             public void run() {
-                Log.e("wuwang","callback success");
+                Log.e("wangshuo","callback success");
                 Bitmap bitmap=Bitmap.createBitmap(mBmpWidth,mBmpHeight, Bitmap.Config.ARGB_8888);
                 bitmap.copyPixelsFromBuffer(data);
                 saveBitmap(bitmap);
