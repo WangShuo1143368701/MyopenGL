@@ -15,5 +15,7 @@
     <item android:id="@+id/mBlur"
         android:title="模糊" />
     <item android:id="@+id/mMagn"
-        android:title="放大镜" />
+    android:title="放大镜" />
+    <item android:id="@+id/beauty"
+        android:title="美化" />
 </menu>

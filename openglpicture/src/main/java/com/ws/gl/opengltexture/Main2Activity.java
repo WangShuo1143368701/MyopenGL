@@ -1,6 +1,7 @@
 package com.ws.gl.opengltexture;
 
 
+import android.content.Intent;
 import android.opengl.GLSurfaceView;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -84,7 +85,10 @@ public class Main2Activity extends AppCompatActivity {
             case R.id.mMagn:
                 mRenderer.setFilter(PictureRenderer.Filter.MAGN);
                 break;
-
+            case R.id.beauty:
+                Intent intent = new Intent(Main2Activity.this,BeautyActivity.class);
+                startActivity(intent);
+                return true;
         }
         mRenderer.setHalf(isHalf);
         glSurfaceView.requestRender();
