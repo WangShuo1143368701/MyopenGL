@@ -63,7 +63,8 @@ public class BeautyActivity extends AppCompatActivity implements SeekBar.OnSeekB
         saveBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                GLBitmapUtils.saveImage(glSurfaceView.getWidth(),glSurfaceView.getHeight(),BeautyActivity.this);
+                mRenderer.saveImage();
+                glSurfaceView.requestRender();
             }
         });
 

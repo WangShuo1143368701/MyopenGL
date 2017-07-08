@@ -2,12 +2,14 @@ package com.ws.gl.opengltexture;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.opengl.GLES20;
 import android.opengl.GLSurfaceView;
 import android.opengl.Matrix;
 import android.view.WindowManager;
 
 import com.ws.gl.opengltexture.programs.TextureShaderProgram;
+import com.ws.gl.opengltexture.util.GLBitmapUtils;
 import com.ws.gl.opengltexture.util.MatrixHelper;
 import com.ws.gl.opengltexture.util.TextureHelper;
 import com.ws.ijk.openglpicture.R;
@@ -155,7 +157,7 @@ public class BeautyRenderer implements GLSurfaceView.Renderer{
 
     private Picture picture;
     //added by wangshuo for upgrade beauty start
-    private int mWidth,mHeight;
+    public int mWidth,mHeight;
     private float toneLevel;
     private float beautyLevel;
     private float brightLevel;
@@ -167,6 +169,7 @@ public class BeautyRenderer implements GLSurfaceView.Renderer{
     private int singleStepOffsetLocation;
     private int texelWidthLocation;
     private int texelHeightLocation;
+    private boolean isTakePicture;
     //added by wangshuo for upgrade beauty end
 
 
@@ -236,6 +239,14 @@ public class BeautyRenderer implements GLSurfaceView.Renderer{
         picture.bindData(textureProgram);
         picture.draw();
 
+        // 获取GLSurfaceView的图片并保存
+        if (isTakePicture) {
+           /* Bitmap bmp = GLBitmapUtils.createBitmapFromGLSurface(0, 0, mWidth,
+                    mHeight, gl10);*/
+            GLBitmapUtils.saveImage(mWidth,mHeight,context);
+            isTakePicture = false;
+        }
+
     }
 
     public void setTexelOffset(float texelOffset) {
@@ -288,5 +299,9 @@ public class BeautyRenderer implements GLSurfaceView.Renderer{
 
     protected void setFloatVec4(final int location, final float[] arrayValue) {
         GLES20.glUniform4fv(location, 1, FloatBuffer.wrap(arrayValue));
+    }
+
+    public void saveImage(){
+        isTakePicture =true;
     }
 }
