@@ -94,8 +94,8 @@ public class GLVideoRenderer implements GLSurfaceView.Renderer
 
     @Override
     public void onSurfaceCreated(GL10 gl, EGLConfig config) {
-        String vertexShader = ShaderUtils.readRawTextFile(context, R.raw.simple_vertex_shader);
-        String fragmentShader= ShaderUtils.readRawTextFile(context, R.raw.simple_fragment_shader);
+        String vertexShader = ShaderUtils.readRawTextFile(context, R.raw.simple_vertex_shader1);
+        String fragmentShader= ShaderUtils.readRawTextFile(context, R.raw.simple_fragment_shader1);
         programId=ShaderUtils.createProgram(vertexShader,fragmentShader);
         aPositionLocation= GLES20.glGetAttribLocation(programId,"aPosition");
 
