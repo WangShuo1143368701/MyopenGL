@@ -33,7 +33,7 @@ public class VRVideoActivity extends AppCompatActivity implements SensorEventLis
 
         glSurfaceView= (GLSurfaceView) findViewById(R.id.glSurfaceView);
         glSurfaceView.setEGLContextClientVersion(2);
-        glRenderer=new VRVideoRenderer(this, Environment.getExternalStorageDirectory().getPath()+"/360.mp4");
+        glRenderer=new VRVideoRenderer(this, Environment.getExternalStorageDirectory().getPath()+"/sjvr1.mp4");
         glSurfaceView.setRenderer(glRenderer);
         glSurfaceView.setRenderMode(GLSurfaceView.RENDERMODE_CONTINUOUSLY);
     }
@@ -51,7 +51,7 @@ public class VRVideoActivity extends AppCompatActivity implements SensorEventLis
         super.onPause();
         mSensorManager.unregisterListener(this);
         glSurfaceView.onPause();
-        glRenderer.getMediaPlayer().pause();
+        //glRenderer.getMediaPlayer().pause();
     }
 
     @Override
