@@ -180,10 +180,22 @@ public class GLVideoRenderer implements GLSurfaceView.Renderer
         updateSurface = true;
     }
 
+    private final float[] modelMatrix = new float[16];//added magic video
+
     @Override
     public void onVideoSizeChanged(MediaPlayer mp, int width, int height) {
         Log.d(TAG, "onVideoSizeChanged: "+width+" "+height);
         updateProjection(width,height);
+
+        //added magic video start
+        Matrix.setIdentityM(modelMatrix,0);
+        Matrix.translateM(modelMatrix,0,0.2f,0.2f,0f);
+        //Matrix.rotateM(modelMatrix,0,-60f,0f,0f,1.0f);
+        Matrix.scaleM(modelMatrix,0,0.5f,0.5f,1.0f);
+        final float[] temp = new float[16];
+        Matrix.multiplyMM(temp,0,projectionMatrix,0,modelMatrix,0);
+        System.arraycopy(temp,0,projectionMatrix,0,temp.length);
+        //added magic video end
     }
 
     private void updateProjection(int videoWidth, int videoHeight){

@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
         glSurfaceView= (GLSurfaceView) findViewById(R.id.glSurfaceView);
         glSurfaceView.setEGLContextClientVersion(2);
-        glRenderer=new GLVideoRenderer(this, Environment.getExternalStorageDirectory().getPath()+"/ws.mp4");
+        glRenderer=new GLVideoRenderer(this, Environment.getExternalStorageDirectory().getPath()+"/login.mp4");
         glSurfaceView.setRenderer(glRenderer);
         glSurfaceView.setRenderMode(GLSurfaceView.RENDERMODE_CONTINUOUSLY);
     }
